@@ -3,7 +3,7 @@ name: Unzip project files
 on:
   push:
     paths:
-      - '*.zip'  # تشغيل الـ workflow إذا تم رفع ملف zip
+      - 'esekoir_github.zip'  # اسم ملف zip الذي رفعته
 
 jobs:
   unzip:
@@ -14,13 +14,14 @@ jobs:
 
       - name: Unzip the project
         run: |
-          unzip lovable-project.zip -d extracted
+          unzip esekoir_github.zip -d extracted
           cp -r extracted/* ./
 
-      - name: Commit changes
+      - name: Commit extracted files
         run: |
-          git config --local user.email "you@example.com"
-          git config --local user.name "Your Name"
+          git config --local user.email "together20032308@gmail.com"
+          git config --local user.name "esekoir"
           git add .
-          git commit -m "Extracted zip files"
+          git commit -m "Extracted esekoir_github.zip"
           git push
+          
